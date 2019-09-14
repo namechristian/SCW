@@ -1,0 +1,46 @@
+---
+title: "My First Markdown"
+author: "Christian Peterson"
+date: "9/14/2019"
+output: html_document
+---
+
+Bold - **bold**
+
+Italics - _Italics_  
+Italics the other way - *Italics*
+
+# Title  
+## Subtitle  
+### Section Title  
+#### Subsection title  
+
+- Bullet list 1  
+- Bullet list 2  
+- Bullet list 3  
+
+* Bullet list 1
+* Bullet list 2
+* bullet list 3
+
+1. Ordered list 1  
+1. Ordered list 2  
+1. Ordered list 3  
+
+# First R script  
+
+```{r first_chunk}
+gapminder<-read.table("gapminder.txt", header=TRUE)
+head(gapminder)
+
+```
+
+## First R plot in markup  
+
+```{r second_chunk, echo=FALSE, fig.height=1, fig.width=2}
+library(ggplot2)
+ggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) + 
+  geom_line(color="blue") +
+  geom_point()
+```
+
